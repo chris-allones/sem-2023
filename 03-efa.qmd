@@ -1,0 +1,9 @@
+---
+title: "Exploratory Factor Analysis (EFA)"
+---
+
+About this site
+
+```{r}
+1 + 1
+```

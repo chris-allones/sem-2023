@@ -1,0 +1,23 @@
+---
+title: "Helpful guide"
+---
+
+Hello there! If you are new in R and RStudio, check out these helpful videos for the installation or basic navigation of R and RStudio.
+
+We are excited to have you in our training, see you there!
+
+***
+
+# 1 How to install R and RStudio
+
+{{< video https://www.youtube.com/embed/D6CunpqF04E
+    title="How to install R and RStudio?"
+    aspect-ratio="14x7" >}}
+
+<br>
+
+<br>
+
+# 2 Getting started with R
+
+{{< video https://www.youtube.com/embed/_V8eKsto3Ug >}}

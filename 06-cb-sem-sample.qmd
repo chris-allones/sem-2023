@@ -1,0 +1,9 @@
+---
+title: "Covariance Based Structural Equation Modelling (CB-SEM)"
+---
+
+About this site
+
+```{r}
+1 + 1
+```

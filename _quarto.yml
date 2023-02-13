@@ -1,0 +1,47 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  page-navigation: true
+  title: "SEM"
+  sidebar: 
+    background: "#022b3a"
+    foreground: light
+    logo: "plots/Intro to SEM.png"
+    style: docked
+    pinned: true
+    contents:
+      - href: "01-helpful-guide.qmd"
+        text: "Helpful guides"
+      - section: "Workshop sessions"
+        contents: 
+          - href: "02-intro-r.qmd"
+            text: "1 Intro to R programming"
+          - href: "03-efa.qmd"
+            text: "2 Exploratory Factor Analysis (EFA)"
+          - href: "04-cfa.qmd"
+            text: "3 Confirmatory Factor Analysis (CFA)"
+          - href: "05-cb-pls-sem.qmd"
+            text: "4 CB & PLS SEM"
+      - href: "06-cb-sem-sample.qmd"
+        text: "CB-SEM demo"
+      - href: "07-pls-sem-sample.qmd"
+        text: "PLS-SEM demo"
+  page-footer:
+    right: "This website is built with [Quarto](https://quarto.org/) in RStudio."
+    left: "&copy; Training workshop on introduction to SEM."
+    background: "#022b3a"
+format:
+  html:
+    theme:
+      light: [cosmo, theme.scss]
+      dark: [cosmo]
+    mainfont: "Atkinson Hyperlegible"
+    code-copy: true
+    code-overflow: wrap
+    toc: true
+
+freeze: auto
+editor: visual
+

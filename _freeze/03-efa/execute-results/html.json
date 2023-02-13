@@ -1,0 +1,16 @@
+{
+  "hash": "652d3e704bf95090305a244df36edf4e",
+  "result": {
+    "markdown": "---\ntitle: \"Exploratory Factor Analysis (EFA)\"\n---\n\n\nAbout this site\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "supporting": [
+      "03-efa_files"
+    ],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

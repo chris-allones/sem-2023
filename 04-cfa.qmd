@@ -1,0 +1,9 @@
+---
+title: "Confirmatory Factor Analysis (CFA)"
+---
+
+About this site
+
+```{r}
+1 + 1
+```

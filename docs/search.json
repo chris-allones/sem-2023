@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Training Workshop on Structural Equation Modelling (SEM) in R",
+    "section": "",
+    "text": "Schedule\nSessions\nTopics\n\n\n\n\n\nDay 1 morning session: 13 March 2023\n\n\nIntro to R programming\n\n\nR objects\nR packages\nReading data in R\nBasic data wrangling\n\n\n\n\nDay 1 afternoon session: 13 March 2023\n\n\nExploratory Factor Analysis (EFA)\n\n\nObjective of EFA\nDesigning EFA\nAssumptions in EFA\nDeriving factors and assessing overall fit\nInterpreting factors\n\n\n\n\nDay 2 morning session: 14 March 2023\n\n\nConfirmatory Factor Analysis (CFA)\n\n\nCFA overview\nCFA with Lavaan package\nDefining constructs\nDeveloping measurement model\nAssessing measurement model validity\n\n\n\n\nDay 2 afternoon session: 14 March 2023\n\n\nCovariance and Partial-least Square SEM\n\n\nSpecifying structural model\nAssessing the structural model validity"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "01-helpful-guide.html",
+    "href": "01-helpful-guide.html",
+    "title": "Helpful guide",
+    "section": "",
+    "text": "Hello there! If you are new in R and RStudio, check out these helpful videos for the installation or basic navigation of R and RStudio.\nWe are excited to have you in our training, see you there!\n\n\n1 How to install R and RStudio\n\n\n\n\n\n2 Getting started with R"
+  },
+  {
+    "objectID": "02-intro-r.html",
+    "href": "02-intro-r.html",
+    "title": "Intro to R programming",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "03-efa.html",
+    "href": "03-efa.html",
+    "title": "Exploratory Factor Analysis (EFA)",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "04-cfa.html",
+    "href": "04-cfa.html",
+    "title": "Confirmatory Factor Analysis (CFA)",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "05-cb-pls-sem.html",
+    "href": "05-cb-pls-sem.html",
+    "title": "Covariance Based (CB) and Partial-Least Square (PLS) Structural Equation Modelling",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "06-cb-sem-sample.html",
+    "href": "06-cb-sem-sample.html",
+    "title": "Covariance Based Structural Equation Modelling (CB-SEM)",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "07-pls-sem-sample.html",
+    "href": "07-pls-sem-sample.html",
+    "title": "Partial-Least Square Structural Equation Modelling (CB-SEM)",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]

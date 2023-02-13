@@ -1,0 +1,9 @@
+---
+title: "Partial-Least Square Structural Equation Modelling (CB-SEM)"
+---
+
+About this site
+
+```{r}
+1 + 1
+```

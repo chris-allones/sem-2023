@@ -1,0 +1,14 @@
+{
+  "hash": "67aae8213b6f20031546d50decafc72e",
+  "result": {
+    "markdown": "---\ntitle: \"Helpful guide\"\n---\n\n\nHello there! If you are new in R and RStudio, check out these helpful videos for the installation or basic navigation of R and RStudio.\n\nWe are excited to have you in our training, see you there!\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
