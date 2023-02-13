@@ -5,12 +5,28 @@ project:
 website:
   page-navigation: true
   title: "SEM"
+  description: "Training workshop on structural equation modelling."
+  site-url: "https://chris-allones.github.io/sem-2023/"
+  
+  repo-url: https://github.com/chris-allones/sem-2023
+  repo-actions: [issue]
+
   sidebar: 
     background: "#022b3a"
     foreground: light
     logo: "plots/Intro to SEM.png"
-    style: docked
     pinned: true
+    align: center
+    tools: 
+      - icon: github
+        href: https://github.com/chris-allones/sem-2023
+        text: "GitHub repository"
+      - icon: twitter
+        href: https://twitter.com/Topenomics
+        text: "Follow me on twitter!"
+        
+    style: docked
+    search: true
     contents:
       - href: "01-helpful-guide.qmd"
         text: "Helpful guides"
@@ -28,6 +44,8 @@ website:
         text: "CB-SEM demo"
       - href: "07-pls-sem-sample.qmd"
         text: "PLS-SEM demo"
+        
+        
   page-footer:
     right: "This website is built with [Quarto](https://quarto.org/) in RStudio."
     left: "&copy; Training workshop on introduction to SEM."
@@ -36,7 +54,7 @@ format:
   html:
     theme:
       light: [cosmo, theme.scss]
-      dark: [cosmo]
+      dark: [cosmo, dark-style.scss]
     mainfont: "Atkinson Hyperlegible"
     code-copy: true
     code-overflow: wrap

@@ -2,38 +2,38 @@
 title: "Training Workshop on Structural Equation Modelling (SEM) in R"
 ---
 
-+---------------------------------------------+---------------------------------------------+------------------------------------------------+
-| Schedule                                    | Sessions                                    | Topics                                         |
-+=============================================+=============================================+================================================+
-| 1.  Day 1 morning session: 13 March 2023    | 1.  Intro to R programming                  | -   R objects                                  |
-|                                             |                                             |                                                |
-|                                             |                                             | -   R packages                                 |
-|                                             |                                             |                                                |
-|                                             |                                             | -   Reading data in R                          |
-|                                             |                                             |                                                |
-|                                             |                                             | -   Basic data wrangling                       |
-+---------------------------------------------+---------------------------------------------+------------------------------------------------+
-| 2.  Day 1 afternoon session: 13 March 2023  | 2.  Exploratory Factor Analysis (EFA)       | -   Objective of EFA                           |
-|                                             |                                             |                                                |
-|                                             |                                             | -   Designing EFA                              |
-|                                             |                                             |                                                |
-|                                             |                                             | -   Assumptions in EFA                         |
-|                                             |                                             |                                                |
-|                                             |                                             | -   Deriving factors and assessing overall fit |
-|                                             |                                             |                                                |
-|                                             |                                             | -   Interpreting factors                       |
-+---------------------------------------------+---------------------------------------------+------------------------------------------------+
-| 3.  Day 2 morning session: 14 March 2023    | 3.  Confirmatory Factor Analysis (CFA)      | -   CFA overview                               |
-|                                             |                                             |                                                |
-|                                             |                                             | -   CFA with Lavaan package                    |
-|                                             |                                             |                                                |
-|                                             |                                             | -   Defining constructs                        |
-|                                             |                                             |                                                |
-|                                             |                                             | -   Developing measurement model               |
-|                                             |                                             |                                                |
-|                                             |                                             | -   Assessing measurement model validity       |
-+---------------------------------------------+---------------------------------------------+------------------------------------------------+
-| 4.  Day 2 afternoon session: 14 March 2023  | 4.  Covariance and Partial-least Square SEM | -   Specifying structural model                |
-|                                             |                                             |                                                |
-|                                             |                                             | -   Assessing the structural model validity    |
-+---------------------------------------------+---------------------------------------------+------------------------------------------------+
++--------------------------------------------+---------------------------------------------+------------------------------------------------+
+| Schedule                                   | Sessions                                    | Topics                                         |
++============================================+=============================================+================================================+
+| 1.  Day 1 morning session: 13 March 2023   | 1.  Intro to R programming                  | -   R objects                                  |
+|                                            |                                             |                                                |
+|                                            |                                             | -   R packages                                 |
+|                                            |                                             |                                                |
+|                                            |                                             | -   Reading data in R                          |
+|                                            |                                             |                                                |
+|                                            |                                             | -   Basic data wrangling                       |
++--------------------------------------------+---------------------------------------------+------------------------------------------------+
+| 2.  Day 1 afternoon session: 13 March 2023 | 2.  Exploratory Factor Analysis (EFA)       | -   Objective of EFA                           |
+|                                            |                                             |                                                |
+|                                            |                                             | -   Designing EFA                              |
+|                                            |                                             |                                                |
+|                                            |                                             | -   Assumptions in EFA                         |
+|                                            |                                             |                                                |
+|                                            |                                             | -   Deriving factors and assessing overall fit |
+|                                            |                                             |                                                |
+|                                            |                                             | -   Interpreting factors                       |
++--------------------------------------------+---------------------------------------------+------------------------------------------------+
+| 3.  Day 2 morning session: 14 March 2023   | 3.  Confirmatory Factor Analysis (CFA)      | -   CFA overview                               |
+|                                            |                                             |                                                |
+|                                            |                                             | -   CFA with Lavaan package                    |
+|                                            |                                             |                                                |
+|                                            |                                             | -   Defining constructs                        |
+|                                            |                                             |                                                |
+|                                            |                                             | -   Developing measurement model               |
+|                                            |                                             |                                                |
+|                                            |                                             | -   Assessing measurement model validity       |
++--------------------------------------------+---------------------------------------------+------------------------------------------------+
+| 4.  Day 2 afternoon session: 14 March 2023 | 4.  Covariance and Partial-least Square SEM | -   Specifying structural model                |
+|                                            |                                             |                                                |
+|                                            |                                             | -   Assessing the structural model validity    |
++--------------------------------------------+---------------------------------------------+------------------------------------------------+
