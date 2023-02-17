@@ -1,7 +1,7 @@
 {
-  "hash": "9519cd14a7535ec9b60640c77de1ea48",
+  "hash": "ced21defd611b76bf902b6a6a1242589",
   "result": {
-    "markdown": "---\ntitle: \"Intro to R programming\"\n---\n\n\nAbout this site\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "markdown": "---\ntitle: \"Intro to R programming\"\n---\n\n\nAbout this site\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n\n\n\n<iframe> src=\"https://chris-allones.github.io/sem-2023-materials/sem_presentations/01-intro-to-r/intro-to-r.html\"\n</iframe>",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
