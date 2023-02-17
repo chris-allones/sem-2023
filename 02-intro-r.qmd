@@ -2,8 +2,21 @@
 title: "Intro to R programming"
 ---
 
-About this site
+### **Presentation keyboard shortcuts**
+          
+::: {.text-line-space}
+<ul>
+  <li>Use <kbd>←</kbd> and <kbd>→</kbd> to navigate through the slides</li>
+  
+  <li>Use <kbd>F</kbd> to toggle full screen</li>
+  
+  <li>Use <kbd>O</kbd> to view an overview of all slides</li>
+  
+  <li>Use <kbd>?</kbd> to see a list of other shortcuts</li>
+  
+</ul>
+:::
 
 ```{=html}
-<iframe width="780" height="500" src="https://chris-allones.github.io/sem-2023-materials/sem_presentations/01-intro-to-r/intro-to-r.html"></iframe>
+<iframe class=box width="780" height="500" src="https://chris-allones.github.io/sem-2023-materials/sem_presentations/01-intro-to-r/intro-to-r.html" style="border:1px solid #8e9aaf";></iframe>
 ```

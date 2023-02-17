@@ -53,7 +53,7 @@ website:
 format:
   html:
     theme:
-      light: [cosmo, theme.scss]
+      light: [cosmo, styles.scss]
       dark: [cosmo, dark-style.scss]
     mainfont: "Atkinson Hyperlegible"
     code-copy: true

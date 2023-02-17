@@ -1,0 +1,28 @@
+/* css styles */
+@import 'https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap';
+
+$font-family: 'Montserrat', sans-serif;
+$link-color: #75AADB;
+$hover-color: darken($link-color, 1%);
+
+/*-- scss:rules --*/
+
+a {
+  color: $link-color;
+  text-decoration: none;
+  
+  &:hover{
+    color: $hover-color;
+  }
+}
+
+
+.text-line-space {
+  line-height: 250%;
+}
+
+
+.box {
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5); 
+}
+
