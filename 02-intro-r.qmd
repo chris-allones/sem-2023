@@ -17,9 +17,9 @@ title: "Intro to R programming"
 </ul>
 :::
 
-::: {}
+
 <a href="https://chris-allones.github.io/sem-2023-materials/sem_presentations/01-intro-to-r/intro-to-r.html" target="_blank" class="btn-slides">View slides in new window</a>
-:::
+
 
 
 
