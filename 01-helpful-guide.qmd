@@ -8,7 +8,7 @@ We are excited to have you in our training, see you there!
 
 ------------------------------------------------------------------------
 
-# 1 How to install R and RStudio
+### 1 How to install R and RStudio
 
 {{< video https://www.youtube.com/embed/D6CunpqF04E title="How to install R and RStudio?" aspect-ratio="10x7" >}}
 
@@ -16,6 +16,6 @@ We are excited to have you in our training, see you there!
 
 <br>
 
-# 2 Getting started with R
+### 2 Getting started with R
 
 {{< video https://www.youtube.com/embed/_V8eKsto3Ug  aspect-ratio="10x7" >}}

@@ -25,14 +25,14 @@
     "href": "02-intro-r.html",
     "title": "Intro to R programming",
     "section": "",
-    "text": "Outline\n\nR Objects\nR packages\nImporting data in R\nData wrangling\n\n\n\nPresentation keyboard shortcuts\n\n\n\nUse ← and → to navigate through the slides\n\n\nUse F to toggle full screen\n\n\nUse O to view an overview of all slides\n\n\nUse ? to see a list of other shortcuts\n\n\n\nView slides in new window"
+    "text": "R Objects\nR packages\nImporting data in R\nData wrangling"
   },
   {
     "objectID": "03-efa.html",
     "href": "03-efa.html",
     "title": "Exploratory Factor Analysis (EFA)",
     "section": "",
-    "text": "Outline\n\nObjective of factor analysis\nDesigning an EFA\nAssumptions in EFA\nDeriving factors and assessing overall fit\nInterpreting factors\n\n\n\nPresentation keyboard shortcuts\n\n\n\nUse ← and → to navigate through the slides\n\n\nUse F to toggle full screen\n\n\nUse O to view an overview of all slides\n\n\nUse ? to see a list of other shortcuts\n\n\n\nView slides in new window"
+    "text": "Objective of factor analysis\nDesigning an EFA\nAssumptions in EFA\nDeriving factors and assessing overall fit\nInterpreting factors"
   },
   {
     "objectID": "04-cfa.html",
@@ -61,5 +61,33 @@
     "title": "Partial-Least Square Structural Equation Modelling (CB-SEM)",
     "section": "",
     "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "01-helpful-guide.html#how-to-install-r-and-rstudio",
+    "href": "01-helpful-guide.html#how-to-install-r-and-rstudio",
+    "title": "Helpful guide",
+    "section": "1 How to install R and RStudio",
+    "text": "1 How to install R and RStudio"
+  },
+  {
+    "objectID": "01-helpful-guide.html#getting-started-with-r",
+    "href": "01-helpful-guide.html#getting-started-with-r",
+    "title": "Helpful guide",
+    "section": "2 Getting started with R",
+    "text": "2 Getting started with R"
+  },
+  {
+    "objectID": "03-efa.html#presentation-keyboard-shortcuts",
+    "href": "03-efa.html#presentation-keyboard-shortcuts",
+    "title": "Exploratory Factor Analysis (EFA)",
+    "section": "Presentation keyboard shortcuts",
+    "text": "Presentation keyboard shortcuts\n\n\n\nUse ← and → to navigate through the slides\n\n\nUse F to toggle full screen\n\n\nUse O to view an overview of all slides\n\n\nUse ? to see a list of other shortcuts\n\n\n\nView slides in new window"
+  },
+  {
+    "objectID": "02-intro-r.html#presentation-keyboard-shortcuts",
+    "href": "02-intro-r.html#presentation-keyboard-shortcuts",
+    "title": "Intro to R programming",
+    "section": "Presentation keyboard shortcuts",
+    "text": "Presentation keyboard shortcuts\n\n\n\nUse ← and → to navigate through the slides\n\n\nUse F to toggle full screen\n\n\nUse O to view an overview of all slides\n\n\nUse ? to see a list of other shortcuts\n\n\n\nView slides in new window"
   }
 ]

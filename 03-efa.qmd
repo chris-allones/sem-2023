@@ -2,7 +2,7 @@
 title: "Exploratory Factor Analysis (EFA)"
 ---
 
-### **Outline**
+## Outline
 
 + Objective of factor analysis
 + Designing an EFA
@@ -11,7 +11,7 @@ title: "Exploratory Factor Analysis (EFA)"
 + Interpreting factors
 
 
-### **Presentation keyboard shortcuts**
+## Presentation keyboard shortcuts
           
 ::: {.text-line-space}
 <ul>

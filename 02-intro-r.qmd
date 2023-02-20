@@ -2,14 +2,14 @@
 title: "Intro to R programming"
 ---
 
-### **Outline**
+## Outline
 
 + R Objects
 + R packages
 + Importing data in R
 + Data wrangling
 
-### **Presentation keyboard shortcuts**
+## Presentation keyboard shortcuts
           
 ::: {.text-line-space}
 <ul>
