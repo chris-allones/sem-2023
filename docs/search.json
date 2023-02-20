@@ -25,14 +25,14 @@
     "href": "02-intro-r.html",
     "title": "Intro to R programming",
     "section": "",
-    "text": "Presentation keyboard shortcuts\n\n\n\nUse ← and → to navigate through the slides\n\n\nUse F to toggle full screen\n\n\nUse O to view an overview of all slides\n\n\nUse ? to see a list of other shortcuts\n\n\n\nView slides in new window"
+    "text": "Outline\n\nR Objects\nR packages\nImporting data in R\nData wrangling\n\n\n\nPresentation keyboard shortcuts\n\n\n\nUse ← and → to navigate through the slides\n\n\nUse F to toggle full screen\n\n\nUse O to view an overview of all slides\n\n\nUse ? to see a list of other shortcuts\n\n\n\nView slides in new window"
   },
   {
     "objectID": "03-efa.html",
     "href": "03-efa.html",
     "title": "Exploratory Factor Analysis (EFA)",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Outline\n\nObjective of factor analysis\nDesigning an EFA\nAssumptions in EFA\nDeriving factors and assessing overall fit\nInterpreting factors\n\n\n\nPresentation keyboard shortcuts\n\n\n\nUse ← and → to navigate through the slides\n\n\nUse F to toggle full screen\n\n\nUse O to view an overview of all slides\n\n\nUse ? to see a list of other shortcuts\n\n\n\nView slides in new window"
   },
   {
     "objectID": "04-cfa.html",
