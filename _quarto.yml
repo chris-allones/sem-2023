@@ -5,6 +5,7 @@ project:
 website:
   page-navigation: true
   title: "SEM"
+  favicon: plots/Intro to SEM.png
   description: "Training workshop on structural equation modelling."
   site-url: "https://chris-allones.github.io/sem-2023/"
   
