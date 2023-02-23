@@ -37,9 +37,9 @@
   {
     "objectID": "04-cfa.html",
     "href": "04-cfa.html",
-    "title": "Confirmatory Factor Analysis (CFA)",
+    "title": "Confirmatory factor analysis (CFA) and Covariance based SEM",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "CFA-SEM overview\nCFA-SEM with Lavaan\nDefining constructs\nDeveloping the overall measurement model\nAssessing measurement model validity\nSpecifying the structural model\nAssessing structural model validity."
   },
   {
     "objectID": "05-cb-pls-sem.html",
@@ -87,6 +87,13 @@
     "objectID": "02-intro-r.html#presentation-keyboard-shortcuts",
     "href": "02-intro-r.html#presentation-keyboard-shortcuts",
     "title": "Intro to R programming",
+    "section": "Presentation keyboard shortcuts",
+    "text": "Presentation keyboard shortcuts\n\n\n\nUse ← and → to navigate through the slides\n\n\nUse F to toggle full screen\n\n\nUse O to view an overview of all slides\n\n\nUse ? to see a list of other shortcuts\n\n\n\nView slides in new window"
+  },
+  {
+    "objectID": "04-cfa.html#presentation-keyboard-shortcuts",
+    "href": "04-cfa.html#presentation-keyboard-shortcuts",
+    "title": "Confirmatory factor analysis (CFA) and Covariance based SEM",
     "section": "Presentation keyboard shortcuts",
     "text": "Presentation keyboard shortcuts\n\n\n\nUse ← and → to navigate through the slides\n\n\nUse F to toggle full screen\n\n\nUse O to view an overview of all slides\n\n\nUse ? to see a list of other shortcuts\n\n\n\nView slides in new window"
   }

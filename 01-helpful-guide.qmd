@@ -18,4 +18,4 @@ We are excited to have you in our training, see you there!
 
 ### 2 Getting started with R
 
-{{< video https://www.youtube.com/embed/_V8eKsto3Ug  aspect-ratio="10x7" >}}
+{{< video https://www.youtube.com/embed/_V8eKsto3Ug aspect-ratio="10x7" >}}

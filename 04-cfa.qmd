@@ -1,9 +1,35 @@
 ---
-title: "Confirmatory Factor Analysis (CFA)"
+title: "Confirmatory factor analysis (CFA) and Covariance based SEM"
 ---
 
-About this site
+## Outline
 
-```{r}
-1 + 1
+-   CFA-SEM overview
+-   CFA-SEM with Lavaan
+-   Defining constructs
+-   Developing the overall measurement model
+-   Assessing measurement model validity
+-   Specifying the structural model
+-   Assessing structural model validity.
+
+## Presentation keyboard shortcuts
+
+::: text-line-space
+<ul>
+
+<li>Use <kbd>←</kbd> and <kbd>→</kbd> to navigate through the slides</li>
+
+<li>Use <kbd>F</kbd> to toggle full screen</li>
+
+<li>Use <kbd>O</kbd> to view an overview of all slides</li>
+
+<li>Use <kbd>?</kbd> to see a list of other shortcuts</li>
+
+</ul>
+:::
+
+<a href="https://chris-allones.github.io/sem-2023-materials/sem_presentations/03-cfa-cb-sem/cfa-cb-sem.html" target="_blank" class="btn-slides">View slides in new window</a>
+
+```{=html}
+<iframe class=box width="600" height="400" src="https://chris-allones.github.io/sem-2023-materials/sem_presentations/03-cfa-cb-sem/cfa-cb-sem.html" style="border:1px solid #8e9aaf";></iframe>
 ```
