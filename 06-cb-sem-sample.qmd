@@ -13,14 +13,21 @@ knitr::opts_chunk$set(comment = "",
 ```
 
 
-## Sample case study
+## Sample study
 
-- ARTICLE: Young people's perceived service quality and environmental
+- Journal article: Young people's perceived service quality and environmental
 performance of hybrid electric bus.
+- Author: Zial Haque and Tehjeeb Noor
+- [DOI Link](https://doi.org/10.1016/j.tbs.2020.03.003)
+- Download the dataset [here](https://ars.els-cdn.com/content/image/1-s2.0-S2214367X19302492-mmc1.xlsx).
 
-- AUTHOR: Zial Haque and Tehjeeb Noor
 
-- DOI Link: https://doi.org/10.1016/j.tbs.2020.03.003
+<div style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
+  <iframe width="100%" height="100%"
+    src="https://www.sciencedirect.com/science/article/pii/S2214367X19302492"
+    frameborder="0" allowfullscreen="" style="position:absolute; top:0; left: 0">
+  </iframe>
+</div>
 
 
 ## Libraries

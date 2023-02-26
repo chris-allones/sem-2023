@@ -27,6 +27,10 @@ title: "Intro to R programming"
 
 <a href="https://chris-allones.github.io/sem-2023-materials/sem_presentations/01-intro-to-r/intro-to-r.html" target="_blank" class="btn-slides">View slides in new window</a>
 
-```{=html}
-<iframe class=box width="600" height="400" src="https://chris-allones.github.io/sem-2023-materials/sem_presentations/01-intro-to-r/intro-to-r.html" style="border:1px solid #8e9aaf";></iframe>
-```
+
+<div class=box style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
+  <iframe width="100%" height="100%"
+    src="https://chris-allones.github.io/sem-2023-materials/sem_presentations/01-intro-to-r/intro-to-r.html"
+    frameborder="0" allowfullscreen="" style="position:absolute; top:0; left: 0">
+  </iframe>
+</div>
