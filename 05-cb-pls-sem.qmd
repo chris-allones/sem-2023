@@ -1,5 +1,5 @@
 ---
-title: "Covariance Based (CB) and Partial-Least Square (PLS) Structural Equation Modelling"
+title: "Partial-Least Square SEM (PLS-SEM)"
 ---
 
 About this site

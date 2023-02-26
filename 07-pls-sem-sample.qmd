@@ -1,5 +1,5 @@
 ---
-title: "Partial-Least Square Structural Equation Modelling (CB-SEM)"
+title: "Partial-Least Square SEM (PLS-SEM)"
 ---
 
 About this site

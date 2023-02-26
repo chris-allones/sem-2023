@@ -1,5 +1,5 @@
 ---
-title: "Covariance Based Structural Equation Modelling (CB-SEM)"
+title: "Covariance Based SEM (CB-SEM)"
 ---
 
 ```{r}
