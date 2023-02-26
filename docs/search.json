@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Training Workshop on Structural Equation Modelling (SEM) in R",
+    "title": "Training Workshop on SEM in R",
     "section": "",
-    "text": "Schedule\nSessions\nTopics\n\n\n\n\n\nDay 1 morning session: 13 March 2023\n\n\nIntro to R programming\n\n\nR objects\nR packages\nReading data in R\nBasic data wrangling\n\n\n\n\nDay 1 afternoon session: 13 March 2023\n\n\nExploratory Factor Analysis (EFA)\n\n\nObjective of EFA\nDesigning EFA\nAssumptions in EFA\nDeriving factors and assessing overall fit\nInterpreting factors\n\n\n\n\nDay 2 morning session: 14 March 2023\n\n\nConfirmatory Factor Analysis (CFA)\n\n\nCFA overview\nCFA with Lavaan package\nDefining constructs\nDeveloping measurement model\nAssessing measurement model validity\n\n\n\n\nDay 2 afternoon session: 14 March 2023\n\n\nCovariance and Partial-least Square SEM\n\n\nSpecifying structural model\nAssessing the structural model validity"
+    "text": "Schedule\nSessions\nTopics\n\n\n\n\n\nDay 1 morning session\n\nIntro to R programming\n\nR objects\nR packages\nReading data in R\nBasic data wrangling\n\n\n\n\nDay 1 afternoon session\n\nExploratory Factor Analysis (EFA)\n\nObjective of EFA\nDesigning EFA\nAssumptions in EFA\nDeriving factors and assessing overall fit\nInterpreting factors\n\n\n\n\nDay 2 morning session\n\nConfirmatory Factor Analysis (CFA)\n\nCFA overview\nCFA with Lavaan package\nDefining constructs\nDeveloping measurement model\nAssessing measurement model validity\n\n\n\n\nDay 2 afternoon session\n\nCovariance and Partial-least Square SEM\n\nSpecifying structural model\nAssessing the structural model validity\nSEM sample study demonstration"
   },
   {
     "objectID": "about.html",
