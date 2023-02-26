@@ -57,6 +57,7 @@ format:
       light: [cosmo, styles.scss]
       dark: [cosmo, dark-style.scss]
     mainfont: "Arial"
+    number-sections: true
     code-copy: true
     code-overflow: wrap
     toc: true

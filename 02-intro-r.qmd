@@ -4,29 +4,28 @@ title: "Intro to R programming"
 
 ## Outline
 
-+ R Objects
-+ R packages
-+ Importing data in R
-+ Data wrangling
+-   R Objects
+-   R packages
+-   Importing data in R
+-   Data wrangling
 
 ## Presentation keyboard shortcuts
-          
-::: {.text-line-space}
+
+::: text-line-space
 <ul>
-  <li>Use <kbd>←</kbd> and <kbd>→</kbd> to navigate through the slides</li>
-  <li>Use <kbd>F</kbd> to toggle full screen</li>
-  <li>Use <kbd>O</kbd> to view an overview of all slides</li>
-  <li>Use <kbd>?</kbd> to see a list of other shortcuts</li>
+
+<li>Use <kbd>←</kbd> and <kbd>→</kbd> to navigate through the slides</li>
+
+<li>Use <kbd>F</kbd> to toggle full screen</li>
+
+<li>Use <kbd>O</kbd> to view an overview of all slides</li>
+
+<li>Use <kbd>?</kbd> to see a list of other shortcuts</li>
+
 </ul>
 :::
 
-
 <a href="https://chris-allones.github.io/sem-2023-materials/sem_presentations/01-intro-to-r/intro-to-r.html" target="_blank" class="btn-slides">View slides in new window</a>
-
-
-
-
-
 
 ```{=html}
 <iframe class=box width="600" height="400" src="https://chris-allones.github.io/sem-2023-materials/sem_presentations/01-intro-to-r/intro-to-r.html" style="border:1px solid #8e9aaf";></iframe>
