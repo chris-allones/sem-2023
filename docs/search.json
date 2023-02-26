@@ -80,15 +80,15 @@
     "objectID": "03-efa.html#presentation-keyboard-shortcuts",
     "href": "03-efa.html#presentation-keyboard-shortcuts",
     "title": "Exploratory Factor Analysis (EFA)",
-    "section": "Presentation keyboard shortcuts",
-    "text": "Presentation keyboard shortcuts\n\n\n\nUse ← and → to navigate through the slides\n\n\nUse F to toggle full screen\n\n\nUse O to view an overview of all slides\n\n\nUse ? to see a list of other shortcuts\n\n\n\nView slides in new window"
+    "section": "2 Presentation keyboard shortcuts",
+    "text": "2 Presentation keyboard shortcuts\n\n\n\nUse ← and → to navigate through the slides\n\n\nUse F to toggle full screen\n\n\nUse O to view an overview of all slides\n\n\nUse ? to see a list of other shortcuts\n\n\n\nView slides in new window"
   },
   {
     "objectID": "02-intro-r.html#presentation-keyboard-shortcuts",
     "href": "02-intro-r.html#presentation-keyboard-shortcuts",
     "title": "Intro to R programming",
-    "section": "Presentation keyboard shortcuts",
-    "text": "Presentation keyboard shortcuts\n\n\n\nUse ← and → to navigate through the slides\n\n\nUse F to toggle full screen\n\n\nUse O to view an overview of all slides\n\n\nUse ? to see a list of other shortcuts\n\n\n\nView slides in new window"
+    "section": "2 Presentation keyboard shortcuts",
+    "text": "2 Presentation keyboard shortcuts\n\n\n\nUse ← and → to navigate through the slides\n\n\nUse F to toggle full screen\n\n\nUse O to view an overview of all slides\n\n\nUse ? to see a list of other shortcuts\n\n\n\nView slides in new window"
   },
   {
     "objectID": "04-cfa.html#presentation-keyboard-shortcuts",
@@ -138,5 +138,12 @@
     "title": "Covariance Based Structural Equation Modelling (CB-SEM)",
     "section": "3 Data",
     "text": "3 Data\n\n## data\ncase_data <- read_excel(\"00_data/e_bus_customer_satisfaction.xlsx\") %>% \n clean_names()\n\ncase_data_items <- case_data %>%\n select(bt1:bt7, bd1:bd4, emp1:emp5, cs1:cs3, ep1:ep4, ls1:ls5)"
+  },
+  {
+    "objectID": "06-cb-sem-sample.html#sample-study",
+    "href": "06-cb-sem-sample.html#sample-study",
+    "title": "Covariance Based Structural Equation Modelling (CB-SEM)",
+    "section": "1 Sample study",
+    "text": "1 Sample study\n\nJournal article: Young people’s perceived service quality and environmental performance of hybrid electric bus.\nAuthor: Zial Haque and Tehjeeb Noor\nDOI Link\nDownload the dataset here."
   }
 ]
