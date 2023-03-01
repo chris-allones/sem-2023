@@ -124,6 +124,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     "search-submit-button-title": "Submit"
   }
 }</script>
+<script src="site_libs/htmlwidgets-1.6.1/htmlwidgets.js"></script>
+<script src="site_libs/viz-1.8.2/viz.js"></script>
+<link href="site_libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet">
+<script src="site_libs/grViz-binding-1.0.9/grViz.js"></script>
 
 
 </head>
@@ -212,7 +216,30 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </nav>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#sample-study" id="toc-sample-study" class="nav-link active" data-scroll-target="#sample-study"><span class="toc-section-number">1</span>  Sample study</a></li>
+  <li><a href="#libraries" id="toc-libraries" class="nav-link" data-scroll-target="#libraries"><span class="toc-section-number">2</span>  Libraries</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="toc-section-number">3</span>  Data</a></li>
+  <li><a href="#exploratory-factor-analysis" id="toc-exploratory-factor-analysis" class="nav-link" data-scroll-target="#exploratory-factor-analysis"><span class="toc-section-number">4</span>  Exploratory factor analysis</a>
+  <ul class="collapse">
+  <li><a href="#scree-plot" id="toc-scree-plot" class="nav-link" data-scroll-target="#scree-plot"><span class="toc-section-number">4.1</span>  Scree plot</a></li>
+  <li><a href="#factor-extraction" id="toc-factor-extraction" class="nav-link" data-scroll-target="#factor-extraction"><span class="toc-section-number">4.2</span>  Factor extraction</a></li>
+  </ul></li>
+  <li><a href="#partial-least-square-sem" id="toc-partial-least-square-sem" class="nav-link" data-scroll-target="#partial-least-square-sem"><span class="toc-section-number">5</span>  Partial-least square SEM</a>
+  <ul class="collapse">
+  <li><a href="#specifying-the-measurement-model" id="toc-specifying-the-measurement-model" class="nav-link" data-scroll-target="#specifying-the-measurement-model"><span class="toc-section-number">5.1</span>  Specifying the measurement model</a></li>
+  <li><a href="#specifying-the-structural-model" id="toc-specifying-the-structural-model" class="nav-link" data-scroll-target="#specifying-the-structural-model"><span class="toc-section-number">5.2</span>  Specifying the structural model</a></li>
+  <li><a href="#estimating-pls-sem-model" id="toc-estimating-pls-sem-model" class="nav-link" data-scroll-target="#estimating-pls-sem-model"><span class="toc-section-number">5.3</span>  Estimating PLS-SEM model</a></li>
+  <li><a href="#bootstraping-pls-sem" id="toc-bootstraping-pls-sem" class="nav-link" data-scroll-target="#bootstraping-pls-sem"><span class="toc-section-number">5.4</span>  Bootstraping PLS-SEM</a></li>
+  <li><a href="#factor-loadings" id="toc-factor-loadings" class="nav-link" data-scroll-target="#factor-loadings"><span class="toc-section-number">5.5</span>  Factor loadings</a></li>
+  <li><a href="#validity-and-reliability" id="toc-validity-and-reliability" class="nav-link" data-scroll-target="#validity-and-reliability"><span class="toc-section-number">5.6</span>  Validity and reliability</a></li>
+  <li><a href="#discriminant-validity" id="toc-discriminant-validity" class="nav-link" data-scroll-target="#discriminant-validity"><span class="toc-section-number">5.7</span>  Discriminant validity</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/chris-allones/sem-2023/issues/new" class="toc-action">Report an issue</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -234,15 +261,366 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
 </header>
 
-<p>About this site</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
+</div>
+<section id="sample-study" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="sample-study"><span class="header-section-number">1</span> Sample study</h2>
+<ul>
+<li>Journal article: Young people’s perceived service quality and environmental performance of hybrid electric bus.</li>
+<li>Author: Zial Haque and Tehjeeb Noor</li>
+<li><a href="https://doi.org/10.1016/j.tbs.2020.03.003">DOI Link</a></li>
+<li>Download the dataset <a href="https://ars.els-cdn.com/content/image/1-s2.0-S2214367X19302492-mmc1.xlsx">here</a></li>
+</ul>
+<div style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
+<p><iframe width="100%" height="100%" src="https://www.sciencedirect.com/science/article/pii/S2214367X19302492" frameborder="0" allowfullscreen="" style="position:absolute; top:0; left: 0"> </iframe></p>
+</div>
+</section>
+<section id="libraries" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="libraries"><span class="header-section-number">2</span> Libraries</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Library</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(janitor)</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(seminr)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(psych)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MVN)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(semTools)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="data" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="data"><span class="header-section-number">3</span> Data</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="do">## data</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>case_data <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"00_data/e_bus_customer_satisfaction.xlsx"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a> <span class="fu">clean_names</span>()</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>case_data_items <span class="ot">&lt;-</span> case_data <span class="sc">%&gt;%</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a> <span class="fu">select</span>(bt1<span class="sc">:</span>bt7, bd1<span class="sc">:</span>bd4, emp1<span class="sc">:</span>emp5, cs1<span class="sc">:</span>cs3, ep1<span class="sc">:</span>ep4, ls1<span class="sc">:</span>ls5)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="exploratory-factor-analysis" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="exploratory-factor-analysis"><span class="header-section-number">4</span> Exploratory factor analysis</h2>
+<section id="scree-plot" class="level3" data-number="4.1">
+<h3 data-number="4.1" class="anchored" data-anchor-id="scree-plot"><span class="header-section-number">4.1</span> Scree plot</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Scree plot using parallel analysis</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">fa.parallel</span>(case_data_items, <span class="at">fa =</span> <span class="st">"fa"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="07-pls-sem-sample_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
+</div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
+<pre><code>Parallel analysis suggests that the number of factors =  7  and the number of components =  NA </code></pre>
+</div>
+</div>
+</section>
+<section id="factor-extraction" class="level3" data-number="4.2">
+<h3 data-number="4.2" class="anchored" data-anchor-id="factor-extraction"><span class="header-section-number">4.2</span> Factor extraction</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Factor loading</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>bus_fa <span class="ot">&lt;-</span> <span class="fu">fa</span>(<span class="at">r =</span> case_data_items,</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>             <span class="at">nfactors =</span> <span class="dv">6</span>,</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>             <span class="at">rotate =</span> <span class="st">"varimax"</span>)</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(bus_fa<span class="sc">$</span>loadings, <span class="at">sort =</span> <span class="cn">TRUE</span>, <span class="at">cutoff =</span> <span class="fl">0.4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Loadings:
+     MR2   MR1   MR3   MR4   MR6   MR5  
+ls1  0.820                              
+ls2  0.891                              
+ls3  0.828                              
+ls4  0.806                              
+ls5  0.599                              
+bt1        0.673                        
+bt2        0.666                        
+bt4        0.549                        
+bt5        0.680                        
+bt6        0.578                        
+bt7        0.550                        
+ep1              0.864                  
+ep2              0.900                  
+ep3              0.690                  
+ep4              0.705                  
+emp1                   0.688            
+emp2                   0.662            
+emp3                   0.636            
+emp4                   0.697            
+emp5                   0.502            
+bd1                          0.679      
+bd2                          0.640      
+bd3                          0.676      
+bd4                          0.629      
+cs1                                0.774
+cs2                                0.817
+cs3                                0.768
+bt3        0.476                        
+
+                 MR2   MR1   MR3   MR4   MR6   MR5
+SS loadings    3.477 3.363 3.081 2.658 2.429 2.297
+Proportion Var 0.124 0.120 0.110 0.095 0.087 0.082
+Cumulative Var 0.124 0.244 0.354 0.449 0.536 0.618</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="partial-least-square-sem" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="partial-least-square-sem"><span class="header-section-number">5</span> Partial-least square SEM</h2>
+<section id="specifying-the-measurement-model" class="level3" data-number="5.1">
+<h3 data-number="5.1" class="anchored" data-anchor-id="specifying-the-measurement-model"><span class="header-section-number">5.1</span> Specifying the measurement model</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>pls_mm_ebus <span class="ot">&lt;-</span> </span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">constructs</span>(</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">composite</span>(<span class="st">"tangible"</span>, <span class="fu">multi_items</span>(<span class="st">"bt"</span>, <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="dv">5</span><span class="sc">:</span><span class="dv">7</span>))),</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">composite</span>(<span class="st">"drivers_quality"</span>, <span class="fu">multi_items</span>(<span class="st">"bd"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)),</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">composite</span>(<span class="st">"empathy"</span>, <span class="fu">multi_items</span>(<span class="st">"emp"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)),</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">composite</span>(<span class="st">"env_perf"</span>, <span class="fu">multi_items</span>(<span class="st">"ep"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>)),</span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">composite</span>(<span class="st">"customer_sat"</span>, <span class="fu">multi_items</span>(<span class="st">"cs"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>)),</span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">composite</span>(<span class="st">"life_sat"</span>, <span class="fu">multi_items</span>(<span class="st">"ls"</span>, <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>))</span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pls_mm_ebus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-5a9c1d9a4a2de1709a18" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-5a9c1d9a4a2de1709a18">{"x":{"diagram":"digraph G {\n\n// ----------------------\n// General graph settings\n// ----------------------\ngraph [\ncharset = \"UTF-8\",\nlayout = dot,\nlabel = \"\",\nfontsize = 24,\nfontcolor = black,\nfontname = helvetica,\nrankdir = LR,\nlabelloc = t,\nsplines = TRUE\nbgcolor = transparent\n]\n\n// --------------------\n// The structural model\n// --------------------\nsubgraph sm {\nrankdir = LR;\nnode [\nshape = ellipse,\ncolor = black,\nfillcolor = white,\nstyle = filled,\nfontsize = 12,\nfontcolor = black,\nheight = 1.00833333333333,\nwidth = 1.884375,\nfontname = helvetica,\nfixedsize = true\n]\n\"tangible\" [label=<<B>tangible <\/B>>, shape = hexagon]\n\"drivers_quality\" [label=<<B>drivers_quality <\/B>>, shape = hexagon]\n\"empathy\" [label=<<B>empathy <\/B>>, shape = hexagon]\n\"env_perf\" [label=<<B>env_perf <\/B>>, shape = hexagon]\n\"customer_sat\" [label=<<B>customer_sat <\/B>>, shape = hexagon]\n\"life_sat\" [label=<<B>life_sat <\/B>>, shape = hexagon]\n}\n// ---------------------\n// The measurement model\n// ---------------------\n\nsubgraph construct_1 {\nnode [\nshape = box,\ncolor = dimgrey,\nfillcolor = white,\nstyle = filled,\nfontsize = 8,\nfontcolor = black,\nheight = 0.164583333333333,\nwidth = 0.359375,\nfontname = helvetica,\nfixedsize = true\n]\n\"bt1\" [label = \"bt1\", shape = box]\n\"bt2\" [label = \"bt2\", shape = box]\n\"bt5\" [label = \"bt5\", shape = box]\n\"bt6\" [label = \"bt6\", shape = box]\n\"bt7\" [label = \"bt7\", shape = box]\nedge [\ncolor = dimgrey,\nfontsize = 7,\nfontcolor = black,\nfontname = helvetica,\nminlen = 1,\ndir = both\narrowhead = none\narrowtail = normal\n]\n\"bt1\" -> {\"tangible\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"bt2\" -> {\"tangible\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"bt5\" -> {\"tangible\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"bt6\" -> {\"tangible\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"bt7\" -> {\"tangible\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\n}\nsubgraph construct_2 {\nnode [\nshape = box,\ncolor = dimgrey,\nfillcolor = white,\nstyle = filled,\nfontsize = 8,\nfontcolor = black,\nheight = 0.164583333333333,\nwidth = 0.359375,\nfontname = helvetica,\nfixedsize = true\n]\n\"bd1\" [label = \"bd1\", shape = box]\n\"bd2\" [label = \"bd2\", shape = box]\n\"bd3\" [label = \"bd3\", shape = box]\n\"bd4\" [label = \"bd4\", shape = box]\nedge [\ncolor = dimgrey,\nfontsize = 7,\nfontcolor = black,\nfontname = helvetica,\nminlen = 1,\ndir = both\narrowhead = none\narrowtail = normal\n]\n\"bd1\" -> {\"drivers_quality\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"bd2\" -> {\"drivers_quality\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"bd3\" -> {\"drivers_quality\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"bd4\" -> {\"drivers_quality\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\n}\nsubgraph construct_3 {\nnode [\nshape = box,\ncolor = dimgrey,\nfillcolor = white,\nstyle = filled,\nfontsize = 8,\nfontcolor = black,\nheight = 0.164583333333333,\nwidth = 0.359375,\nfontname = helvetica,\nfixedsize = true\n]\n\"emp1\" [label = \"emp1\", shape = box]\n\"emp2\" [label = \"emp2\", shape = box]\n\"emp3\" [label = \"emp3\", shape = box]\n\"emp4\" [label = \"emp4\", shape = box]\n\"emp5\" [label = \"emp5\", shape = box]\nedge [\ncolor = dimgrey,\nfontsize = 7,\nfontcolor = black,\nfontname = helvetica,\nminlen = 1,\ndir = both\narrowhead = none\narrowtail = normal\n]\n\"emp1\" -> {\"empathy\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"emp2\" -> {\"empathy\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"emp3\" -> {\"empathy\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"emp4\" -> {\"empathy\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"emp5\" -> {\"empathy\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\n}\nsubgraph construct_4 {\nnode [\nshape = box,\ncolor = dimgrey,\nfillcolor = white,\nstyle = filled,\nfontsize = 8,\nfontcolor = black,\nheight = 0.164583333333333,\nwidth = 0.359375,\nfontname = helvetica,\nfixedsize = true\n]\n\"ep1\" [label = \"ep1\", shape = box]\n\"ep2\" [label = \"ep2\", shape = box]\n\"ep3\" [label = \"ep3\", shape = box]\n\"ep4\" [label = \"ep4\", shape = box]\nedge [\ncolor = dimgrey,\nfontsize = 7,\nfontcolor = black,\nfontname = helvetica,\nminlen = 1,\ndir = both\narrowhead = none\narrowtail = normal\n]\n\"ep1\" -> {\"env_perf\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"ep2\" -> {\"env_perf\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"ep3\" -> {\"env_perf\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"ep4\" -> {\"env_perf\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\n}\nsubgraph construct_5 {\nnode [\nshape = box,\ncolor = dimgrey,\nfillcolor = white,\nstyle = filled,\nfontsize = 8,\nfontcolor = black,\nheight = 0.164583333333333,\nwidth = 0.359375,\nfontname = helvetica,\nfixedsize = true\n]\n\"cs1\" [label = \"cs1\", shape = box]\n\"cs2\" [label = \"cs2\", shape = box]\n\"cs3\" [label = \"cs3\", shape = box]\nedge [\ncolor = dimgrey,\nfontsize = 7,\nfontcolor = black,\nfontname = helvetica,\nminlen = 1,\ndir = both\narrowhead = none\narrowtail = normal\n]\n\"cs1\" -> {\"customer_sat\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"cs2\" -> {\"customer_sat\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"cs3\" -> {\"customer_sat\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\n}\nsubgraph construct_6 {\nnode [\nshape = box,\ncolor = dimgrey,\nfillcolor = white,\nstyle = filled,\nfontsize = 8,\nfontcolor = black,\nheight = 0.164583333333333,\nwidth = 0.359375,\nfontname = helvetica,\nfixedsize = true\n]\n\"ls1\" [label = \"ls1\", shape = box]\n\"ls2\" [label = \"ls2\", shape = box]\n\"ls3\" [label = \"ls3\", shape = box]\n\"ls4\" [label = \"ls4\", shape = box]\n\"ls5\" [label = \"ls5\", shape = box]\nedge [\ncolor = dimgrey,\nfontsize = 7,\nfontcolor = black,\nfontname = helvetica,\nminlen = 1,\ndir = both\narrowhead = none\narrowtail = normal\n]\n\"ls1\" -> {\"life_sat\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"ls2\" -> {\"life_sat\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"ls3\" -> {\"life_sat\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"ls4\" -> {\"life_sat\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\"ls5\" -> {\"life_sat\"}[weight = 1000, penwidth = 1.5, style = solid, color = dimgrey]\n\n}\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="specifying-the-structural-model" class="level3" data-number="5.2">
+<h3 data-number="5.2" class="anchored" data-anchor-id="specifying-the-structural-model"><span class="header-section-number">5.2</span> Specifying the structural model</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pls_sm_ebus <span class="ot">&lt;-</span> </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">relationships</span>(</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paths</span>(<span class="at">from =</span> <span class="fu">c</span>(<span class="st">"tangible"</span>, <span class="st">"drivers_quality"</span>, <span class="st">"empathy"</span>, <span class="st">"env_perf"</span>),</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>        <span class="at">to =</span> <span class="st">"customer_sat"</span>),</span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">paths</span>(<span class="at">from =</span> <span class="st">"customer_sat"</span>, <span class="at">to =</span> <span class="st">"life_sat"</span>)</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pls_sm_ebus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-ad43a944e9c0ea7fa201" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-ad43a944e9c0ea7fa201">{"x":{"diagram":"digraph G {\n\n// ----------------------\n// General graph settings\n// ----------------------\ngraph [\ncharset = \"UTF-8\",\nlayout = dot,\nlabel = \"\",\nfontsize = 24,\nfontcolor = black,\nfontname = helvetica,\nrankdir = LR,\nlabelloc = t,\nsplines = TRUE\nbgcolor = transparent\n]\n\n// --------------------\n// The structural model\n// --------------------\nsubgraph sm {\nrankdir = LR;\nnode [\nshape = ellipse,\ncolor = black,\nfillcolor = white,\nstyle = filled,\nfontsize = 12,\nfontcolor = black,\nheight = 1.00833333333333,\nwidth = 1.884375,\nfontname = helvetica,\nfixedsize = true\n]\n\"tangible\" [label=<<B>tangible <\/B>>, shape = ellipse]\n\"drivers_quality\" [label=<<B>drivers_quality <\/B>>, shape = ellipse]\n\"empathy\" [label=<<B>empathy <\/B>>, shape = ellipse]\n\"env_perf\" [label=<<B>env_perf <\/B>>, shape = ellipse]\n\"customer_sat\" [label=<<B>customer_sat <\/B>>, shape = ellipse]\n\"life_sat\" [label=<<B>life_sat <\/B>>, shape = ellipse]\nedge [\ncolor = black,\nfontsize = 9,\nfontcolor = black,\nfontname = helvetica,\ndir = both,\narrowhead = normal,\narrowtail = none\n]\n\"tangible\" -> {\"customer_sat\"}[weight = 1, penwidth = 1.5, style = solid, color = black]\n\"drivers_quality\" -> {\"customer_sat\"}[weight = 1, penwidth = 1.5, style = solid, color = black]\n\"empathy\" -> {\"customer_sat\"}[weight = 1, penwidth = 1.5, style = solid, color = black]\n\"env_perf\" -> {\"customer_sat\"}[weight = 1, penwidth = 1.5, style = solid, color = black]\n\"customer_sat\" -> {\"life_sat\"}[weight = 1, penwidth = 1.5, style = solid, color = black]\n}\n\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+</div>
+</section>
+<section id="estimating-pls-sem-model" class="level3" data-number="5.3">
+<h3 data-number="5.3" class="anchored" data-anchor-id="estimating-pls-sem-model"><span class="header-section-number">5.3</span> Estimating PLS-SEM model</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pls_model_ebus <span class="ot">&lt;-</span> </span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">estimate_pls</span>(</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">data =</span> case_data,</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">measurement_model =</span> pls_mm_ebus,</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">structural_model =</span> pls_sm_ebus</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(pls_model_ebus)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="grViz html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-84e4c024f555a5f46111" style="width:100%;height:464px;"></div>
+<script type="application/json" data-for="htmlwidget-84e4c024f555a5f46111">{"x":{"diagram":"digraph G {\n\n// ----------------------\n// General graph settings\n// ----------------------\ngraph [\ncharset = \"UTF-8\",\nlayout = dot,\nlabel = \"\",\nfontsize = 24,\nfontcolor = black,\nfontname = helvetica,\nrankdir = LR,\nlabelloc = t,\nsplines = TRUE\nbgcolor = transparent\n]\n\n// --------------------\n// The structural model\n// --------------------\nsubgraph sm {\nrankdir = LR;\nnode [\nshape = ellipse,\ncolor = black,\nfillcolor = white,\nstyle = filled,\nfontsize = 12,\nfontcolor = black,\nheight = 1.00833333333333,\nwidth = 1.884375,\nfontname = helvetica,\nfixedsize = true\n]\n\"tangible\" [label=<<B>tangible <\/B>>, shape = hexagon]\n\"drivers_quality\" [label=<<B>drivers_quality <\/B>>, shape = hexagon]\n\"empathy\" [label=<<B>empathy <\/B>>, shape = hexagon]\n\"env_perf\" [label=<<B>env_perf <\/B>>, shape = hexagon]\n\"customer_sat\" [label=<<B>customer_sat <\/B><BR /><FONT POINT-SIZE=\"10\">r² = 0.448<\/FONT>>, shape = hexagon]\n\"life_sat\" [label=<<B>life_sat <\/B><BR /><FONT POINT-SIZE=\"10\">r² = 0.077<\/FONT>>, shape = hexagon]\nedge [\ncolor = black,\nfontsize = 9,\nfontcolor = black,\nfontname = helvetica,\ndir = both,\narrowhead = normal,\narrowtail = none\n]\n\"tangible\" -> {\"customer_sat\"}[weight = 1, label = < 𝛽 = 0.179<BR /><FONT POINT-SIZE=\"7\">   <\/FONT> >, penwidth = 1.395, style = solid, color = black]\n\"drivers_quality\" -> {\"customer_sat\"}[weight = 1, label = < 𝛽 = 0.146<BR /><FONT POINT-SIZE=\"7\">   <\/FONT> >, penwidth = 1.23, style = solid, color = black]\n\"empathy\" -> {\"customer_sat\"}[weight = 1, label = < 𝛽 = 0.31<BR /><FONT POINT-SIZE=\"7\">   <\/FONT> >, penwidth = 2.05, style = solid, color = black]\n\"env_perf\" -> {\"customer_sat\"}[weight = 1, label = < 𝛽 = 0.237<BR /><FONT POINT-SIZE=\"7\">   <\/FONT> >, penwidth = 1.685, style = solid, color = black]\n\"customer_sat\" -> {\"life_sat\"}[weight = 1, label = < 𝛽 = 0.278<BR /><FONT POINT-SIZE=\"7\">   <\/FONT> >, penwidth = 1.89, style = solid, color = black]\n}\n// ---------------------\n// The measurement model\n// ---------------------\n\nsubgraph construct_1 {\nnode [\nshape = box,\ncolor = dimgrey,\nfillcolor = white,\nstyle = filled,\nfontsize = 8,\nfontcolor = black,\nheight = 0.164583333333333,\nwidth = 0.359375,\nfontname = helvetica,\nfixedsize = true\n]\n\"bt1\" [label = \"bt1\", shape = box]\n\"bt2\" [label = \"bt2\", shape = box]\n\"bt5\" [label = \"bt5\", shape = box]\n\"bt6\" [label = \"bt6\", shape = box]\n\"bt7\" [label = \"bt7\", shape = box]\nedge [\ncolor = dimgrey,\nfontsize = 7,\nfontcolor = black,\nfontname = helvetica,\nminlen = 1,\ndir = both\narrowhead = none\narrowtail = normal\n]\n\"bt1\" -> {\"tangible\"}[weight = 1000, label = < 𝜆 = 0.763 >, penwidth = 2.789, style = solid, color = dimgrey]\n\"bt2\" -> {\"tangible\"}[weight = 1000, label = < 𝜆 = 0.766 >, penwidth = 2.798, style = solid, color = dimgrey]\n\"bt5\" -> {\"tangible\"}[weight = 1000, label = < 𝜆 = 0.767 >, penwidth = 2.801, style = solid, color = dimgrey]\n\"bt6\" -> {\"tangible\"}[weight = 1000, label = < 𝜆 = 0.79 >, penwidth = 2.87, style = solid, color = dimgrey]\n\"bt7\" -> {\"tangible\"}[weight = 1000, label = < 𝜆 = 0.772 >, penwidth = 2.816, style = solid, color = dimgrey]\n\n}\nsubgraph construct_2 {\nnode [\nshape = box,\ncolor = dimgrey,\nfillcolor = white,\nstyle = filled,\nfontsize = 8,\nfontcolor = black,\nheight = 0.164583333333333,\nwidth = 0.359375,\nfontname = helvetica,\nfixedsize = true\n]\n\"bd1\" [label = \"bd1\", shape = box]\n\"bd2\" [label = \"bd2\", shape = box]\n\"bd3\" [label = \"bd3\", shape = box]\n\"bd4\" [label = \"bd4\", shape = box]\nedge [\ncolor = dimgrey,\nfontsize = 7,\nfontcolor = black,\nfontname = helvetica,\nminlen = 1,\ndir = both\narrowhead = none\narrowtail = normal\n]\n\"bd1\" -> {\"drivers_quality\"}[weight = 1000, label = < 𝜆 = 0.834 >, penwidth = 3.002, style = solid, color = dimgrey]\n\"bd2\" -> {\"drivers_quality\"}[weight = 1000, label = < 𝜆 = 0.823 >, penwidth = 2.969, style = solid, color = dimgrey]\n\"bd3\" -> {\"drivers_quality\"}[weight = 1000, label = < 𝜆 = 0.858 >, penwidth = 3.074, style = solid, color = dimgrey]\n\"bd4\" -> {\"drivers_quality\"}[weight = 1000, label = < 𝜆 = 0.826 >, penwidth = 2.978, style = solid, color = dimgrey]\n\n}\nsubgraph construct_3 {\nnode [\nshape = box,\ncolor = dimgrey,\nfillcolor = white,\nstyle = filled,\nfontsize = 8,\nfontcolor = black,\nheight = 0.164583333333333,\nwidth = 0.359375,\nfontname = helvetica,\nfixedsize = true\n]\n\"emp1\" [label = \"emp1\", shape = box]\n\"emp2\" [label = \"emp2\", shape = box]\n\"emp3\" [label = \"emp3\", shape = box]\n\"emp4\" [label = \"emp4\", shape = box]\n\"emp5\" [label = \"emp5\", shape = box]\nedge [\ncolor = dimgrey,\nfontsize = 7,\nfontcolor = black,\nfontname = helvetica,\nminlen = 1,\ndir = both\narrowhead = none\narrowtail = normal\n]\n\"emp1\" -> {\"empathy\"}[weight = 1000, label = < 𝜆 = 0.768 >, penwidth = 2.804, style = solid, color = dimgrey]\n\"emp2\" -> {\"empathy\"}[weight = 1000, label = < 𝜆 = 0.799 >, penwidth = 2.897, style = solid, color = dimgrey]\n\"emp3\" -> {\"empathy\"}[weight = 1000, label = < 𝜆 = 0.699 >, penwidth = 2.597, style = solid, color = dimgrey]\n\"emp4\" -> {\"empathy\"}[weight = 1000, label = < 𝜆 = 0.794 >, penwidth = 2.882, style = solid, color = dimgrey]\n\"emp5\" -> {\"empathy\"}[weight = 1000, label = < 𝜆 = 0.762 >, penwidth = 2.786, style = solid, color = dimgrey]\n\n}\nsubgraph construct_4 {\nnode [\nshape = box,\ncolor = dimgrey,\nfillcolor = white,\nstyle = filled,\nfontsize = 8,\nfontcolor = black,\nheight = 0.164583333333333,\nwidth = 0.359375,\nfontname = helvetica,\nfixedsize = true\n]\n\"ep1\" [label = \"ep1\", shape = box]\n\"ep2\" [label = \"ep2\", shape = box]\n\"ep3\" [label = \"ep3\", shape = box]\n\"ep4\" [label = \"ep4\", shape = box]\nedge [\ncolor = dimgrey,\nfontsize = 7,\nfontcolor = black,\nfontname = helvetica,\nminlen = 1,\ndir = both\narrowhead = none\narrowtail = normal\n]\n\"ep1\" -> {\"env_perf\"}[weight = 1000, label = < 𝜆 = 0.905 >, penwidth = 3.215, style = solid, color = dimgrey]\n\"ep2\" -> {\"env_perf\"}[weight = 1000, label = < 𝜆 = 0.947 >, penwidth = 3.341, style = solid, color = dimgrey]\n\"ep3\" -> {\"env_perf\"}[weight = 1000, label = < 𝜆 = 0.875 >, penwidth = 3.125, style = solid, color = dimgrey]\n\"ep4\" -> {\"env_perf\"}[weight = 1000, label = < 𝜆 = 0.866 >, penwidth = 3.098, style = solid, color = dimgrey]\n\n}\nsubgraph construct_5 {\nnode [\nshape = box,\ncolor = dimgrey,\nfillcolor = white,\nstyle = filled,\nfontsize = 8,\nfontcolor = black,\nheight = 0.164583333333333,\nwidth = 0.359375,\nfontname = helvetica,\nfixedsize = true\n]\n\"cs1\" [label = \"cs1\", shape = box]\n\"cs2\" [label = \"cs2\", shape = box]\n\"cs3\" [label = \"cs3\", shape = box]\nedge [\ncolor = dimgrey,\nfontsize = 7,\nfontcolor = black,\nfontname = helvetica,\nminlen = 1,\ndir = both\narrowhead = none\narrowtail = normal\n]\n\"cs1\" -> {\"customer_sat\"}[weight = 1000, label = < 𝜆 = 0.944 >, penwidth = 3.332, style = solid, color = dimgrey]\n\"cs2\" -> {\"customer_sat\"}[weight = 1000, label = < 𝜆 = 0.96 >, penwidth = 3.38, style = solid, color = dimgrey]\n\"cs3\" -> {\"customer_sat\"}[weight = 1000, label = < 𝜆 = 0.934 >, penwidth = 3.302, style = solid, color = dimgrey]\n\n}\nsubgraph construct_6 {\nnode [\nshape = box,\ncolor = dimgrey,\nfillcolor = white,\nstyle = filled,\nfontsize = 8,\nfontcolor = black,\nheight = 0.164583333333333,\nwidth = 0.359375,\nfontname = helvetica,\nfixedsize = true\n]\n\"ls1\" [label = \"ls1\", shape = box]\n\"ls2\" [label = \"ls2\", shape = box]\n\"ls3\" [label = \"ls3\", shape = box]\n\"ls4\" [label = \"ls4\", shape = box]\n\"ls5\" [label = \"ls5\", shape = box]\nedge [\ncolor = dimgrey,\nfontsize = 7,\nfontcolor = black,\nfontname = helvetica,\nminlen = 1,\ndir = both\narrowhead = normal\narrowtail = none\n]\n\"life_sat\" -> {\"ls1\"}[weight = 1000, label = < 𝜆 = 0.874 >, penwidth = 3.122, style = solid, color = dimgrey]\n\"life_sat\" -> {\"ls2\"}[weight = 1000, label = < 𝜆 = 0.915 >, penwidth = 3.245, style = solid, color = dimgrey]\n\"life_sat\" -> {\"ls3\"}[weight = 1000, label = < 𝜆 = 0.885 >, penwidth = 3.155, style = solid, color = dimgrey]\n\"life_sat\" -> {\"ls4\"}[weight = 1000, label = < 𝜆 = 0.854 >, penwidth = 3.062, style = solid, color = dimgrey]\n\"life_sat\" -> {\"ls5\"}[weight = 1000, label = < 𝜆 = 0.711 >, penwidth = 2.633, style = solid, color = dimgrey]\n\n}\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>summary_pls_model_ebus <span class="ot">&lt;-</span> <span class="fu">summary</span>(pls_model_ebus)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>summary_pls_model_ebus</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Results from  package seminr (2.3.2)
+
+Path Coefficients:
+                customer_sat life_sat
+R^2                    0.448    0.077
+AdjR^2                 0.440    0.074
+tangible               0.179        .
+drivers_quality        0.146        .
+empathy                0.310        .
+env_perf               0.237        .
+customer_sat               .    0.278
+
+Reliability:
+                alpha  rhoC   AVE  rhoA
+tangible        0.830 0.880 0.595 0.831
+drivers_quality 0.856 0.902 0.698 0.857
+empathy         0.825 0.876 0.586 0.840
+env_perf        0.920 0.944 0.808 0.926
+customer_sat    0.941 0.962 0.895 0.944
+life_sat        0.903 0.929 0.724 0.911
+
+Alpha, rhoC, and rhoA should exceed 0.7 while AVE should exceed 0.5</code></pre>
+</div>
+</div>
+</section>
+<section id="bootstraping-pls-sem" class="level3" data-number="5.4">
+<h3 data-number="5.4" class="anchored" data-anchor-id="bootstraping-pls-sem"><span class="header-section-number">5.4</span> Bootstraping PLS-SEM</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="do">## bootstrapping PLS-SEM model</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>boot_pls_model_ebus <span class="ot">&lt;-</span> <span class="fu">bootstrap_model</span>(<span class="at">seminr_model =</span> pls_model_ebus,</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                <span class="at">nboot =</span> <span class="dv">1000</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="do">## summary results</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>summary_boot_pls_model_ebus <span class="ot">&lt;-</span> <span class="fu">summary</span>(boot_pls_model_ebus, <span class="at">alpha =</span> <span class="fl">0.10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="factor-loadings" class="level3" data-number="5.5">
+<h3 data-number="5.5" class="anchored" data-anchor-id="factor-loadings"><span class="header-section-number">5.5</span> Factor loadings</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DT::datatable(summary_boot_pls_model_ebus$bootstrapped_loadings %&gt;% round(3))</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>summary_boot_pls_model_ebus<span class="sc">$</span>bootstrapped_loadings</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                         Original Est. Bootstrap Mean Bootstrap SD T Stat.
+bt1  -&gt;  tangible                0.763          0.761        0.037  20.707
+bt2  -&gt;  tangible                0.766          0.764        0.035  22.046
+bt5  -&gt;  tangible                0.767          0.766        0.031  24.360
+bt6  -&gt;  tangible                0.790          0.789        0.029  27.564
+bt7  -&gt;  tangible                0.772          0.771        0.033  23.713
+bd1  -&gt;  drivers_quality         0.834          0.834        0.020  40.731
+bd2  -&gt;  drivers_quality         0.823          0.821        0.026  31.741
+bd3  -&gt;  drivers_quality         0.858          0.858        0.017  50.149
+bd4  -&gt;  drivers_quality         0.826          0.825        0.026  31.461
+emp1  -&gt;  empathy                0.768          0.765        0.032  23.723
+emp2  -&gt;  empathy                0.799          0.796        0.027  29.528
+emp3  -&gt;  empathy                0.699          0.693        0.043  16.113
+emp4  -&gt;  empathy                0.794          0.793        0.029  27.106
+emp5  -&gt;  empathy                0.762          0.763        0.028  27.264
+ep1  -&gt;  env_perf                0.905          0.904        0.018  49.581
+ep2  -&gt;  env_perf                0.947          0.947        0.009 100.483
+ep3  -&gt;  env_perf                0.875          0.877        0.020  42.788
+ep4  -&gt;  env_perf                0.866          0.865        0.028  30.901
+cs1  -&gt;  customer_sat            0.944          0.945        0.012  81.730
+cs2  -&gt;  customer_sat            0.960          0.960        0.006 148.250
+cs3  -&gt;  customer_sat            0.934          0.933        0.015  60.609
+ls1  -&gt;  life_sat                0.874          0.871        0.023  37.425
+ls2  -&gt;  life_sat                0.915          0.914        0.016  56.960
+ls3  -&gt;  life_sat                0.885          0.885        0.028  32.094
+ls4  -&gt;  life_sat                0.854          0.850        0.024  35.493
+ls5  -&gt;  life_sat                0.711          0.709        0.051  13.901
+                         5% CI 95% CI
+bt1  -&gt;  tangible        0.695  0.813
+bt2  -&gt;  tangible        0.705  0.817
+bt5  -&gt;  tangible        0.712  0.814
+bt6  -&gt;  tangible        0.737  0.832
+bt7  -&gt;  tangible        0.714  0.818
+bd1  -&gt;  drivers_quality 0.798  0.865
+bd2  -&gt;  drivers_quality 0.776  0.861
+bd3  -&gt;  drivers_quality 0.828  0.884
+bd4  -&gt;  drivers_quality 0.779  0.865
+emp1  -&gt;  empathy        0.709  0.812
+emp2  -&gt;  empathy        0.748  0.838
+emp3  -&gt;  empathy        0.618  0.759
+emp4  -&gt;  empathy        0.741  0.836
+emp5  -&gt;  empathy        0.713  0.806
+ep1  -&gt;  env_perf        0.871  0.931
+ep2  -&gt;  env_perf        0.929  0.961
+ep3  -&gt;  env_perf        0.841  0.907
+ep4  -&gt;  env_perf        0.817  0.907
+cs1  -&gt;  customer_sat    0.924  0.962
+cs2  -&gt;  customer_sat    0.949  0.970
+cs3  -&gt;  customer_sat    0.905  0.956
+ls1  -&gt;  life_sat        0.830  0.904
+ls2  -&gt;  life_sat        0.886  0.938
+ls3  -&gt;  life_sat        0.835  0.923
+ls4  -&gt;  life_sat        0.808  0.885
+ls5  -&gt;  life_sat        0.618  0.782</code></pre>
+</div>
+</div>
+</section>
+<section id="validity-and-reliability" class="level3" data-number="5.6">
+<h3 data-number="5.6" class="anchored" data-anchor-id="validity-and-reliability"><span class="header-section-number">5.6</span> Validity and reliability</h3>
+<p>Construct reliability or factor reliability assesses the extent to which a group of items is consistent in what it intends to measure. We want to test whether the items we selected are reliable or not.</p>
+<ul>
+<li><p>Examples of reliability measurement are Cronbach’s alpha, Rho A and Rho C. The three reliability measurement are similar to what they represent. Thus, the interpretation is the same.</p></li>
+<li><p>Higher values indicate a higher level of reliability. Reliability values of 0.70 and above are satisfactory to a good measure of reliability.</p></li>
+<li><p>Results show that all factors are above the recommended threshold of 0.70, indicating items used to measure the factors are reliable.</p></li>
+</ul>
+<p>Convergent validity assesses how well the identified items as indicators for a construct measure the expected construct.</p>
+<ul>
+<li><p>For example, emphaty was measured using 5 indicators, the construct validity can be used to determine how well those 5 indicators measure the factor of Job Satisfaction.</p></li>
+<li><p>The Average Variance Extracted (AVE) is a measurement for convergent validity. An AVE greater than 0.50 provides evidence for convergent validity.</p></li>
+<li><p>Results show that AVE for all factors is above the recommended threshold of 0.50, indicating the measured factors passed the convergent validity test.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># DT::datatable(summary_pls_model_ebus$reliability %&gt;% round(3))</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="do">## Reliability measurment </span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>summary_pls_model_ebus<span class="sc">$</span>reliability</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                alpha  rhoC   AVE  rhoA
+tangible        0.830 0.880 0.595 0.831
+drivers_quality 0.856 0.902 0.698 0.857
+empathy         0.825 0.876 0.586 0.840
+env_perf        0.920 0.944 0.808 0.926
+customer_sat    0.941 0.962 0.895 0.944
+life_sat        0.903 0.929 0.724 0.911
+
+Alpha, rhoC, and rhoA should exceed 0.7 while AVE should exceed 0.5</code></pre>
+</div>
+</div>
+</section>
+<section id="discriminant-validity" class="level3" data-number="5.7">
+<h3 data-number="5.7" class="anchored" data-anchor-id="discriminant-validity"><span class="header-section-number">5.7</span> Discriminant validity</h3>
+<p>The discriminant validity assesses the extent to which a factor or construct is distinct from other constructs.</p>
+<p>The idea is to identify unique items as measurements for an intended factor. If the selected items uniquely measure the intended factors, then that factor should not be highly correlated to other factors.</p>
+<p>Fornell-Larcker criterion and the heterotrait-monotrait criterion are the most commonly used measurements for discriminant validity.</p>
+<section id="fornell-larcker-criterion" class="level4" data-number="5.7.1">
+<h4 data-number="5.7.1" class="anchored" data-anchor-id="fornell-larcker-criterion"><span class="header-section-number">5.7.1</span> Fornell-Larcker Criterion</h4>
+<ul>
+<li><p>Italicized and bolded values are the factors. While non-bolded values are the inter-correlation of the factors.</p></li>
+<li><p>To establish discriminant validity, the off-diagonal values should be less than AVE or the diagonal values (e.g., 0.853, 0.876, 0.855, …).</p></li>
+<li><p>Result shows that the factor’s AVE is higher than the off-diagonal values.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="do">## Fornell-Larcker criterion results</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>summary_pls_model_ebus<span class="sc">$</span>validity<span class="sc">$</span>fl_criteria</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                tangible drivers_quality empathy env_perf customer_sat life_sat
+tangible           0.772               .       .        .            .        .
+drivers_quality    0.562           0.835       .        .            .        .
+empathy            0.377           0.524   0.765        .            .        .
+env_perf           0.471           0.421   0.380    0.899            .        .
+customer_sat       0.489           0.509   0.544    0.500        0.946        .
+life_sat           0.326           0.249   0.237    0.293        0.278    0.851
+
+FL Criteria table reports square root of AVE on the diagonal and construct correlations on the lower triangle.</code></pre>
+</div>
+</div>
+</section>
+<section id="heterotrait-monotrait-ratio" class="level4" data-number="5.7.2">
+<h4 data-number="5.7.2" class="anchored" data-anchor-id="heterotrait-monotrait-ratio"><span class="header-section-number">5.7.2</span> Heterotrait-Monotrait ratio</h4>
+<ul>
+<li><p>To establish discriminant validity, the HTMT value should be lower than the recommended threshold of 0.90 or less than 0.85 for a more conservative threshold (Henseler et al., 2015)</p></li>
+<li><p>When the HTMT value is high (above 0.90) it may suggest one or some indicators in one construct is highly related to another construct. It means the construct is not conceptually distinct.</p></li>
+<li><p>Using the HTMT criterion, values are below 0.90 or 0.85, which suggests constructs passed the discriminant validity test.</p></li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>summary_pls_model_ebus<span class="sc">$</span>validity<span class="sc">$</span>htmt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                tangible drivers_quality empathy env_perf customer_sat life_sat
+tangible               .               .       .        .            .        .
+drivers_quality    0.667               .       .        .            .        .
+empathy            0.440           0.606       .        .            .        .
+env_perf           0.535           0.470   0.424        .            .        .
+customer_sat       0.551           0.565   0.596    0.532            .        .
+life_sat           0.378           0.279   0.262    0.320        0.300        .</code></pre>
+</div>
+</div>
+</section>
+<section id="vif" class="level4" data-number="5.7.3">
+<h4 data-number="5.7.3" class="anchored" data-anchor-id="vif"><span class="header-section-number">5.7.3</span> VIF</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>summary_pls_model_ebus<span class="sc">$</span>vif_antecedents</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>customer_sat :
+       tangible drivers_quality         empathy        env_perf 
+          1.624           1.783           1.445           1.392 
+
+life_sat :
+customer_sat 
+           . </code></pre>
 </div>
 </div>
 
 
+</section>
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
