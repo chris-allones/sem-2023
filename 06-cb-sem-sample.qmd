@@ -1,5 +1,7 @@
 ---
 title: "Covariance Based SEM (CB-SEM)"
+bibliography: references.bib
+
 ---
 
 ```{r}
@@ -12,22 +14,15 @@ knitr::opts_chunk$set(comment = "",
 
 ```
 
-
 ## Sample study
 
-- Journal article: Young people's perceived service quality and environmental
-performance of hybrid electric bus.
-- Author: Zial Haque and Tehjeeb Noor
-- [DOI Link](https://doi.org/10.1016/j.tbs.2020.03.003)
-- Download the dataset [here](https://ars.els-cdn.com/content/image/1-s2.0-S2214367X19302492-mmc1.xlsx).
+-   Journal article: [Young people's perceived service quality and environmental performance of hybrid electric bus.](https://doi.org/10.1016/j.tbs.2020.03.003)
+-   Author: Zial Haque and Tehjeeb Noor
+-   Article link: [DOI link](https://doi.org/10.1016/j.tbs.2020.03.003)
+-   Download the dataset [here](https://ars.els-cdn.com/content/image/1-s2.0-S2214367X19302492-mmc1.xlsx).
 
 
-<div style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
-  <iframe width="100%" height="100%"
-    src="https://www.sciencedirect.com/science/article/pii/S2214367X19302492"
-    frameborder="0" allowfullscreen="" style="position:absolute; top:0; left: 0">
-  </iframe>
-</div>
+![](plots/sample_study.png){fig-align="center"}
 
 
 ## Libraries
@@ -41,8 +36,8 @@ library(lavaan)
 library(psych)
 library(MVN)
 library(semTools)
+library(lavaanPlot)
 ```
-
 
 ## Data
 
@@ -53,6 +48,9 @@ case_data <- read_excel("00_data/e_bus_customer_satisfaction.xlsx") %>%
 
 case_data_items <- case_data %>%
  select(bt1:bt7, bd1:bd4, emp1:emp5, cs1:cs3, ep1:ep4, ls1:ls5)
+
+## datatable
+DT::datatable(case_data)
 ```
 
 
@@ -60,13 +58,43 @@ case_data_items <- case_data %>%
 
 ### Scree plot
 
+We can use a scree test to identify the optimum number of factors that can be extracted. In the example below, a parallel analysis was used to identify the potential number of factors that can be extracted.
+
+The test will generate simulated dataset with random values for the same number of variables and sample size. The test involved the following procedures [see @hair_multivariate_2019]:
+
+- Then each of these simulated datasets is then factor analyzed, either with PCA or CFA and the eigen values are averaged for each factor across all the data sets.
+
+- The results is the average eigenvalues for the first, second and so on across the set of simulated dataset.
+
+- These values are then compared to the eigen values extracted for the original data.
+
+- All factors with eigen values above those average eigen values are retained.
+
+
+Result of the parallel analysis shows that there are 6 potential factors (i.e., six triangles are above the red broken line or the simulated data). At this stage, you compare your expected number of factors to be extracted against the scree test. Note that the test can be used as one of your bases for factor extraction. 
+
 ```{r}
 ## Scree plot using parallel analysis
 fa.parallel(case_data_items, fa = "fa")
 ```
 
-
 ### Factor extraction
+
+An EFA with a varimax rotation was used to identify which items load to their expected construct. Items with high cross-loadings (i.e., items which load highly to more than one construct) and loadings below 0.30 were excluded.
+
+High cross-loadings pose difficulty in establishing a separate concept of each variable when factors are apparently shared variables. The goal is to identify the pattern where each item associates only with one factor.
+
+Some guides for factor loadings [@hair_multivariate_2019]:
+
+- Factor loadings less than ±0.10 can be considered equivalent to zero for purposes of assessing simple structure.
+
+- Factor loadings in the range of ±0.30 and ±0.40 are considered to meet the minimal level for interpretation of the structure.
+
+- Loadings ±0.50 or greater are considered practically significant
+
+- Loadings exceeding ±0.70 are considered indicative of well-defined structure and are the goal of any factor analysis.
+
+Extremely high loadings such as ±0.90 and above are not typical, and the practical significance of the loadings is an important criterion.
 
 ```{r}
 ## Factor loading
@@ -77,10 +105,26 @@ bus_fa <- fa(r = case_data_items,
 print(bus_fa$loadings, sort = TRUE, cutoff = 0.4)
 ```
 
-
 ## Confirmatory factor analysis
 
+
+### Multivariate normality test
+
+One of the assumptions in CFA and CB-SEM is multivariate normality. Following the test employed in the sample study, the `mvn` function of the `MVN` package [@korkmaz_mvn_2014] allows us to run Mardia's test for multivariate normality.
+
+Using the Mardia test wherein p-value < 0.5 indicate rejection of the null hypothesis of multivariate and univariate normality. Result shows that the null hypothesis of multivariate normality of all the multivariate normality was rejected. Therefore, the study use the maximum likelihood robust (MLR) estimator to estimate the measurement model instead of the usual maximum likelihood estimator (MLR) [@rosseel_lavaan].
+
+
+```{r}
+MVN::mvn(data = case_data_items, mvnTest = "mardia", desc = F)
+```
+
+
 ### Specifying the measurement model
+
+Below is the syntax used in defining our factor. For example, the `drivers_quality` factor is specified using the syntax `drivers_quality =~ bd1 + bd2 + bd3 + bd4`, which means this factor is measured using `bd1` to `bd4`. 
+
+Note that we know which indicators to use to represent the factor based on our exploratory factor analysis in the previous sections.
 
 ```{r}
 ## Specifying CFA model
@@ -90,11 +134,21 @@ cfa_model <- "tangible =~ bt1 + bt2 + bt4 + bt5 + bt6 + bt7
               env_perf =~ ep1 + ep2 + ep3 + ep4
               customer_sat =~ cs1 + cs2 + cs3
               life_sat =~ ls1 + ls2 + ls3 + ls4 + ls5"
-
 ```
 
-
 ### Fitting the model
+
+Given the result of the normality test, a maximum likelihood robust (MLR) was used to estimate the initial measurement model. Based on the assessment criteria, the model shows an acceptable and adequate model fit.
+
+The fit of the measurement model was assessed using the ratio of the Chi-square to the degrees of freedom, Tucker-Lewis Index (TLI), Comparative Fit Index (CFI), and the Root Mean Square Error of Approximation (RMSEA).
+
+For the recommended values of the fit measures, see Table 3 below taken from the study of W. Shiau & M. Luo [-@shiau_luo].
+
+![](plots/sample_gof.png){fig-align="center" width=50% height=50%}
+
+::: {style="font-size:70%; color=#6c757d;"}
+Sample GOF results from W. Shiau & M. Luo [-@shiau_luo]. Continuance intention of blog users: The impact of perceived enjoyment, habit, user involvement and blogging time
+:::
 
 ```{r}
 ## Fitting CFA model
@@ -105,8 +159,10 @@ cfa_fit <- cfa(model = cfa_model,
 ## Summary results
 cfa_fit %>% summary(standardized = TRUE,
                      fit.measures = TRUE)
-```
 
+## plotting cfa model
+lavaanPlot(model = cfa_fit, coefs = TRUE, covs = TRUE)
+```
 
 ### Relibility and validity tests
 
@@ -115,7 +171,6 @@ cfa_fit %>% summary(standardized = TRUE,
 reliability(cfa_fit) %>% round(2)
 
 ```
-
 
 ## Structural equation modelling
 
@@ -135,8 +190,20 @@ ebus_model <- "tangible =~ bt1 + bt2 + bt4 + bt5 + bt6 + bt7
               life_sat ~ customer_sat"
 ```
 
-
 ### Fitting the structural model
+
+In the previous section, we only defined our model. Here we fit our specified model using the `Lavaan` package [@rosseel_lavaan] for SEM analysis. The output composes mainly of the fit indices and parameter estimates. The parameter estimates are shown under the Latent variables, Regressions, and Variances section.
+
+**Latent variables**
+
+The Estimates column is the non-standardized factor loadings coefficient accompanied by its Std Error (standard error). The most important to look at in the Estimates column is the presence of negative values since variance should not be negative. Thus, a negative value is a sign of a problem (see Heywood case for more information).
+
+For interpretation, for example, the non-standardized factor loading of `bt2`, that is, `1.021`, indicates an increase of one unit in the latent variable, `tangible` factor, is associated with an increase of `1.021` in `bt2` item.
+
+The last column std.lv and std.all present a standardized solution. The std.lv presents a factor loading of a solution that only latent variables (factors) were standardized. Whereas the std.all presents the factor loading of a solution where latent variables and indicators were standardized. We want a value to be positive and greater than 0.40 as a required minimum to evaluate the relevance of the indicators and the factor. However, this set required minimum is not unanimously accepted, but the larger, the better.
+
+
+... in progress.
 
 ```{r}
 ## Fitting structural model
@@ -148,11 +215,23 @@ ebus_fit <- sem(model = ebus_model,
 ebus_fit %>% summary(standardized = TRUE,
                      fit.measures = TRUE,
                      rsq = TRUE)
+
+## plotting sem model using LavaanPlot package
+lavaanPlot(model = ebus_fit, coefs = TRUE, covs = TRUE, stars = TRUE, digits = 2)
+
+## plotting sem model using semPlot package
+semPlot::semPaths(object = ebus_fit,
+                  what = "std",
+                  layout = "tree",
+                  rotation = 2,
+                  sizeMan = 3,
+                  sizeLat = 5,
+                  intercepts = FALSE,
+                  residuals = FALSE,
+                  exoCov = F)
 ```
 
-
 ### Estimating indirect effects
-
 
 #### Specifying model with indirect effects
 
@@ -177,7 +256,6 @@ ebus_model_ie <- "tangible =~ bt1 + bt2 + bt4 + bt5 + bt6 + bt7
 
 ```
 
-
 #### Fitting the model with indirect effects
 
 ```{r}
@@ -192,4 +270,3 @@ ebus_fit_ie %>% summary(standardized = TRUE,
                         rsq = TRUE)
 
 ```
-

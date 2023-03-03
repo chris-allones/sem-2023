@@ -12,24 +12,14 @@ knitr::opts_chunk$set(comment = "",
 
 ```
 
-
 ## Sample study
 
-- Journal article: Young people's perceived service quality and environmental
-performance of hybrid electric bus.
-- Author: Zial Haque and Tehjeeb Noor
-- [DOI Link](https://doi.org/10.1016/j.tbs.2020.03.003)
-- Download the dataset [here](https://ars.els-cdn.com/content/image/1-s2.0-S2214367X19302492-mmc1.xlsx)
+-   Journal article: [Young people's perceived service quality and environmental performance of hybrid electric bus.](https://doi.org/10.1016/j.tbs.2020.03.003)
+-   Author: Zial Haque and Tehjeeb Noor
+-   Article link: [DOI link](https://doi.org/10.1016/j.tbs.2020.03.003)
+-   Download the dataset [here](https://ars.els-cdn.com/content/image/1-s2.0-S2214367X19302492-mmc1.xlsx)
 
-
-
-<div style="padding-bottom:56.25%; position:relative; display:block; width: 100%">
-  <iframe width="100%" height="100%"
-    src="https://www.sciencedirect.com/science/article/pii/S2214367X19302492"
-    frameborder="0" allowfullscreen="" style="position:absolute; top:0; left: 0">
-  </iframe>
-</div>
-
+![](plots/sample_study.png){fig-align="center"}
 
 
 ## Libraries
@@ -45,7 +35,6 @@ library(MVN)
 library(semTools)
 ```
 
-
 ## Data
 
 ```{r}
@@ -57,7 +46,6 @@ case_data_items <- case_data %>%
  select(bt1:bt7, bd1:bd4, emp1:emp5, cs1:cs3, ep1:ep4, ls1:ls5)
 ```
 
-
 ## Exploratory factor analysis
 
 ### Scree plot
@@ -66,7 +54,6 @@ case_data_items <- case_data %>%
 ## Scree plot using parallel analysis
 fa.parallel(case_data_items, fa = "fa")
 ```
-
 
 ### Factor extraction
 
@@ -78,8 +65,6 @@ bus_fa <- fa(r = case_data_items,
 
 print(bus_fa$loadings, sort = TRUE, cutoff = 0.4)
 ```
-
-
 
 ## Partial-least square SEM
 
@@ -112,8 +97,6 @@ pls_sm_ebus <-
 plot(pls_sm_ebus)
 ```
 
-
-
 ### Estimating PLS-SEM model
 
 ```{r}
@@ -133,7 +116,6 @@ summary_pls_model_ebus <- summary(pls_model_ebus)
 summary_pls_model_ebus
 ```
 
-
 ### Bootstraping PLS-SEM
 
 ```{r}
@@ -145,8 +127,6 @@ boot_pls_model_ebus <- bootstrap_model(seminr_model = pls_model_ebus,
 ## summary results
 summary_boot_pls_model_ebus <- summary(boot_pls_model_ebus, alpha = 0.10)
 ```
-
-
 
 ### Factor loadings
 
@@ -179,7 +159,6 @@ Convergent validity assesses how well the identified items as indicators for a c
 summary_pls_model_ebus$reliability
 ```
 
-
 ### Discriminant validity
 
 The discriminant validity assesses the extent to which a factor or construct is distinct from other constructs.
@@ -201,7 +180,6 @@ Fornell-Larcker criterion and the heterotrait-monotrait criterion are the most c
 summary_pls_model_ebus$validity$fl_criteria
 ```
 
-
 #### Heterotrait-Monotrait ratio
 
 -   To establish discriminant validity, the HTMT value should be lower than the recommended threshold of 0.90 or less than 0.85 for a more conservative threshold (Henseler et al., 2015)
@@ -214,10 +192,8 @@ summary_pls_model_ebus$validity$fl_criteria
 summary_pls_model_ebus$validity$htmt
 ```
 
-
 #### VIF
 
 ```{r}
 summary_pls_model_ebus$vif_antecedents
 ```
-

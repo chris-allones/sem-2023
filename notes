@@ -1,0 +1,17 @@
+**Regression**
+  
+  In the Regression section, three causal paths were specified. These causal paths are transformational leadership to CSR, transformational leadership to job performance, and CSR to job performance.
+
+trnsfrm_ld →
+csr : The transformational leadership is positively associated with a higher perceived corporate social responsibility.
+csr and trnsfrm_ld →
+job_perf: Job performance is positively associated with a higher sense of social responsibility and leadership quality. Note that the estimates for the effects of CSR and leadership is not statistically significant.
+
+
+**Variances**
+  
+  Previously the factor loadings are said to be the portion of variance explained by the extracted factor. In comparison, the values of each indicator under the Variances section represent the portion of variance not accounted for by the factor.
+
+For example, in transform2 under Std.all column, the loading is 0.943 if taking the squares of this value (0.9432=0.889
+), 88.9% of the variation for transform2 is explained by transformational leadership. Thus, 1–0.889=0.111
+that corresponds to transform2 in the Variances section under column Std.all that measures the variation (11.1%) not accounted for by the factor.
